@@ -29,6 +29,7 @@ const mockRouter: NextRouter = {
     pathname: '/',
     route: '/',
     asPath: '/',
+    isLocaleDomain: false,
     query: {},
     push: jest.fn(),
     replace: jest.fn(),
