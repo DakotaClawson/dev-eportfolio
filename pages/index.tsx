@@ -1,22 +1,48 @@
 import { GetServerSideProps } from 'next';
-import Link from 'next/link';
 import Image from 'next/image';
-import { makeStyles, createStyles, Typography, Theme, Paper, ListItem, List, Grid, Button } from '@material-ui/core';
-
+import { makeStyles, createStyles, Typography, Theme, Grid } from '@material-ui/core';
 import { tools } from '../lib/tools';
+import Navbar from '../ components/Navbar';
 
 const useStyles = makeStyles((theme: Theme) =>
     createStyles({
+        root: {
+            padding: '2em',
+            alignContent: 'center',
+            backgroundColor: theme.palette.gray.light,
+            minHeight: '55rem',
+        },
         paper: {
             background: theme.palette.gray.light,
             boxShadow: `0 0.125em 0.25em 0 ${theme.palette.shadow.main}, 0 0.1875em 0.625em 0 ${theme.palette.shadow.main}`,
             padding: '2em',
         },
-        root: {
-            padding: '2em',
-        },
         linkButton: {
             marginLeft: '1em',
+        },
+        photoGrid: {
+            textAlign: 'center',
+            alignSelf: 'center',
+            backgroundColor: theme.palette.primary.main,
+            borderRadius: '75px 85px 70px 115px',
+            width: '20%',
+        },
+        bioGrid: {
+            textAlign: 'center',
+            alignSelf: 'center',
+        },
+        photo: {
+            borderRadius: '90px',
+            //boxShadow: `.90em .90em .90em 0 ${theme.palette.shadow.main}`,
+        },
+        name: {
+            color: theme.palette.primary.dark,
+        },
+        title: {
+            color: theme.palette.secondary.dark,
+        },
+        body: {
+            color: theme.palette.secondary.dark,
         },
     })
 );
@@ -29,38 +55,26 @@ export default function Home({ tools }: Props) {
     const classes = useStyles();
 
     return (
-        <Grid container spacing={4} direction="column" className={classes.root}>
-            <Grid item>
-                <Typography variant="h4" component="h1" gutterBottom>
-                    Next.js example
-                </Typography>
-            </Grid>
-            <Grid item container spacing={4} direction="column" xs={12} alignItems="center">
-                <Grid container item alignContent="center" justify="center">
-                    <Typography variant="h5">Tools</Typography>
+        <>
+            <Navbar />
+            <Grid container spacing={4} direction="column" className={classes.root}>
+                <Grid item sm={12} direction="column" className={classes.photoGrid}>
+                    <Image className={classes.photo} src="/Dakota.jpg" alt="Dakota" width={155} height={160} />
                 </Grid>
-                <Grid item>
-                    <Paper className={classes.paper}>
-                        <List aria-label={tools.join(', ')}>
-                            {tools.map(({ name, image }) => (
-                                <ListItem key={name}>
-                                    <Grid container alignItems="center" justify="space-between">
-                                        {/* NextJS Image optimization example. Props are src(any file under the public dir), width, and height */}
-                                        {image && <Image {...image} />}
-                                        <Typography variant="body1">{name}</Typography>
-                                        <Link href="/tool/[name]" as={`/tool/${name}`}>
-                                            <Button variant="contained" color="primary" className={classes.linkButton}>
-                                                Learn more
-                                            </Button>
-                                        </Link>
-                                    </Grid>
-                                </ListItem>
-                            ))}
-                        </List>
-                    </Paper>
+                <Grid item sm={5} direction="column" className={classes.bioGrid}>
+                    <Typography variant="h4" component="h1" gutterBottom className={classes.name}>
+                        Dakota Clawson
+                    </Typography>
+                    <Typography variant="h5" component="h1" gutterBottom className={classes.title}>
+                        Software Engineer
+                    </Typography>
+                    <Typography variant="body1" component="h1" gutterBottom className={classes.body}>
+                        Hi there! I'm working remotely in southwestern Ohio. I build web applications using React, Node,
+                        and Postgres.
+                    </Typography>
                 </Grid>
             </Grid>
-        </Grid>
+        </>
     );
 }
 
