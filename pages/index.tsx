@@ -11,6 +11,8 @@ const useStyles = makeStyles((theme: Theme) =>
             alignContent: 'center',
             backgroundColor: theme.palette.gray.light,
             minHeight: '55rem',
+            width: '100%',
+            margin: '0px',
         },
         paper: {
             background: theme.palette.gray.light,
@@ -25,21 +27,25 @@ const useStyles = makeStyles((theme: Theme) =>
             alignSelf: 'center',
             backgroundColor: theme.palette.primary.main,
             borderRadius: '75px 85px 70px 115px',
-            width: '20%',
+            //width: '15%',
         },
         bioGrid: {
-            textAlign: 'center',
             alignSelf: 'center',
+            backgroundColor: theme.palette.primary.light,
+            borderRadius: '115px 70px 85px 75px',
+            marginTop: '10px',
+            textAlign: 'center',
+            //width: '35%',
         },
         photo: {
             borderRadius: '90px',
             //boxShadow: `.90em .90em .90em 0 ${theme.palette.shadow.main}`,
         },
         name: {
-            color: theme.palette.primary.dark,
+            color: theme.palette.secondary.dark,
         },
         title: {
-            color: theme.palette.secondary.dark,
+            color: theme.palette.primary.dark,
         },
         body: {
             color: theme.palette.secondary.dark,
@@ -59,7 +65,7 @@ export default function Home({ tools }: Props) {
             <Navbar />
             <Grid container spacing={4} direction="column" className={classes.root}>
                 <Grid item sm={12} direction="column" className={classes.photoGrid}>
-                    <Image className={classes.photo} src="/Dakota.jpg" alt="Dakota" width={155} height={160} />
+                    <Image className={classes.photo} src="/Dakota.jpg" alt="Dakota" width={190} height={195} />
                 </Grid>
                 <Grid item sm={5} direction="column" className={classes.bioGrid}>
                     <Typography variant="h4" component="h1" gutterBottom className={classes.name}>

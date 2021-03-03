@@ -8,11 +8,11 @@ const useStyles = makeStyles((theme: Theme) =>
             alignContent: 'center',
             backgroundColor: theme.palette.secondary.main,
             margin: '0px',
-            paddingBottom: '1em',
+            //paddingBottom: '1em',
         },
         text: {
             textDecoration: 'none',
-            color: theme.palette.secondary.dark,
+            color: theme.palette.gray.light,
             '&:hover:not($disabled):after': {
                 backgroundColor: 'red',
             },
@@ -22,7 +22,7 @@ const useStyles = makeStyles((theme: Theme) =>
 export default function Navbar() {
     const classes = useStyles();
     return (
-        <Grid container sm={12} direction="row" spacing={2} className={classes.root}>
+        <Grid container sm={12} direction="row" spacing={2} alignContent="center" className={classes.root}>
             <Grid item>
                 <Typography variant="h5">
                     <Link href="/">
@@ -30,7 +30,7 @@ export default function Navbar() {
                     </Link>
                 </Typography>
             </Grid>
-            <Grid item>
+            <Grid item sm={1}>
                 <Typography variant="h5">
                     <Link href="/about">
                         <a className={classes.text}>About</a>
