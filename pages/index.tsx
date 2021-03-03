@@ -3,16 +3,12 @@ import Image from 'next/image';
 import { makeStyles, createStyles, Typography, Theme, Grid } from '@material-ui/core';
 import { tools } from '../lib/tools';
 import Navbar from '../ components/Navbar';
+import Layout from '../ components/Layout';
 
 const useStyles = makeStyles((theme: Theme) =>
     createStyles({
         root: {
-            padding: '2em',
             alignContent: 'center',
-            backgroundColor: theme.palette.gray.light,
-            minHeight: '55rem',
-            width: '100%',
-            margin: '0px',
         },
         paper: {
             background: theme.palette.gray.light,
@@ -26,7 +22,7 @@ const useStyles = makeStyles((theme: Theme) =>
             textAlign: 'center',
             alignSelf: 'center',
             backgroundColor: theme.palette.primary.main,
-            borderRadius: '75px 85px 70px 115px',
+            borderRadius: '75px 65px 70px 115px',
             //width: '15%',
         },
         bioGrid: {
@@ -61,13 +57,13 @@ export default function Home({ tools }: Props) {
     const classes = useStyles();
 
     return (
-        <>
+        <Layout>
             <Navbar />
             <Grid container spacing={4} direction="column" className={classes.root}>
                 <Grid item sm={12} direction="column" className={classes.photoGrid}>
                     <Image className={classes.photo} src="/Dakota.jpg" alt="Dakota" width={190} height={195} />
                 </Grid>
-                <Grid item sm={5} direction="column" className={classes.bioGrid}>
+                <Grid item sm={3} direction="column" className={classes.bioGrid}>
                     <Typography variant="h4" component="h1" gutterBottom className={classes.name}>
                         Dakota Clawson
                     </Typography>
@@ -80,7 +76,7 @@ export default function Home({ tools }: Props) {
                     </Typography>
                 </Grid>
             </Grid>
-        </>
+        </Layout>
     );
 }
 
