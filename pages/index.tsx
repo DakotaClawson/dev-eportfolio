@@ -1,7 +1,5 @@
-import { GetServerSideProps } from 'next';
 import Image from 'next/image';
 import { makeStyles, createStyles, Typography, Theme, Grid } from '@material-ui/core';
-import { tools } from '../lib/tools';
 import Navbar from '../ components/Navbar';
 import Layout from '../ components/Layout';
 
@@ -75,14 +73,3 @@ export default function Home() {
         </Layout>
     );
 }
-
-export const getServerSideProps: GetServerSideProps<Props> = async () => {
-    return {
-        props: {
-            tools: tools.map(({ name, image }) => ({
-                name,
-                image,
-            })),
-        },
-    };
-};
