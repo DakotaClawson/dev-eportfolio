@@ -1,7 +1,8 @@
 import React, { ReactNode } from 'react';
 import Head from 'next/head';
 import Navbar from './Navbar';
-import { makeStyles, createStyles, Typography, Theme } from '@material-ui/core';
+import { makeStyles, createStyles, Theme } from '@material-ui/core';
+import Footer from './Footer';
 
 type Props = {
     children?: ReactNode;
@@ -14,7 +15,6 @@ const useStyles = makeStyles((theme: Theme) =>
             padding: '8em',
             alignContent: 'center',
             backgroundColor: theme.palette.gray.light,
-            minHeight: '40rem',
             width: '100%',
             margin: '0px',
         },
@@ -37,9 +37,7 @@ export default function Layout({ children, title = 'Dakota Clawson' }: Props) {
             </Head>
             <Navbar />
             <div className={classes.root}>{children}</div>
-            <footer className={classes.footer}>
-                <Typography>Contact</Typography>
-            </footer>
+            <Footer />
         </>
     );
 }

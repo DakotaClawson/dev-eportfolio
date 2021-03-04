@@ -41,16 +41,16 @@ export default function Navbar() {
                     </Typography>
                 </Grid>
                 <Grid item className={classes.gridButton}>
-                    <Typography variant="button">
+                    <Typography>
                         <Link href="/about">
-                            <a className={classes.text}>About</a>
+                            <a className={classes.text}>.about( )</a>
                         </Link>
                     </Typography>
                 </Grid>
                 <Grid item className={classes.gridButton}>
-                    <Typography variant="button">
+                    <Typography>
                         <Link href="/about">
-                            <a className={classes.text}>Contact</a>
+                            <a className={classes.text}>.contact( )</a>
                         </Link>
                     </Typography>
                 </Grid>
