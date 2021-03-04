@@ -49,11 +49,7 @@ const useStyles = makeStyles((theme: Theme) =>
     })
 );
 
-interface Props {
-    tools: { name: string; image?: { src: string; width: number; height: number } }[];
-}
-
-export default function Home({ tools }: Props) {
+export default function Home() {
     const classes = useStyles();
 
     return (
