@@ -1,6 +1,6 @@
 import Link from 'next/link';
 import { makeStyles, createStyles, Typography, Theme, Grid, AppBar } from '@material-ui/core';
-import CodeIcon from '@material-ui/icons/Code';
+//import CodeIcon from '@material-ui/icons/Code';
 
 const useStyles = makeStyles((theme: Theme) =>
     createStyles({
@@ -33,9 +33,10 @@ export default function Navbar() {
                     <Typography variant="h5">
                         <Link href="/">
                             <a className={classes.text}>
-                                Dak
+                                Dakota
+                                {/* Dak
                                 <CodeIcon className={classes.codeIcon} />
-                                ta
+                                ta */}
                             </a>
                         </Link>
                     </Typography>

@@ -15,6 +15,7 @@ const useStyles = makeStyles((theme: Theme) =>
             padding: '8em',
             alignContent: 'center',
             backgroundColor: theme.palette.gray.light,
+            minHeight: '44rem',
             width: '100%',
             margin: '0px',
         },

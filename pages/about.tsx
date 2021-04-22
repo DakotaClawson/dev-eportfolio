@@ -1,6 +1,6 @@
 import React from 'react';
 import Navbar from '../ components/Navbar';
-import { makeStyles, createStyles, Typography, Theme, Grid } from '@material-ui/core';
+import { makeStyles, createStyles, Typography, Theme, Grid, Fade } from '@material-ui/core';
 import Layout from '../ components/Layout';
 
 const useStyles = makeStyles((theme: Theme) =>
@@ -28,17 +28,21 @@ export default function About() {
             <Navbar />
             <Grid container spacing={4} direction="column" className={classes.root}>
                 <Grid item sm={6}>
-                    <Grid item sm={1} className={classes.header}>
-                        <Typography color="secondary" variant="h4" component="h1" gutterBottom>
-                            About
+                    <Fade in timeout={{ appear: 500, enter: 700, exit: 1000 }}>
+                        <Grid item sm={1} className={classes.header}>
+                            <Typography color="secondary" variant="h4" component="h1" gutterBottom>
+                                About
+                            </Typography>
+                        </Grid>
+                    </Fade>
+                    <Fade in timeout={{ appear: 500, enter: 700, exit: 1000 }}>
+                        <Typography variant="body1" component="h1" gutterBottom>
+                            As a recent graduate, I have been building my skills as a Software Engineer Developer at a
+                            small software company called Mile Two. My current goal as a developer is to continue
+                            gaining hands-on experience building web applications. When I'm not coding, I spend most of
+                            my time outdoors playing with my chocolate labrador, Freya.
                         </Typography>
-                    </Grid>
-                    <Typography variant="body1" component="h1" gutterBottom>
-                        As a recent graduate, I have been building my skills as a Software Engineer Developer at a small
-                        software company called Mile Two. My current goal as a developer is to continue gaining hands-on
-                        experience building web applications. When I'm not coding, I spend most of my time outdoors
-                        playing with my chocolate labrador, Freya.
-                    </Typography>
+                    </Fade>
                     <Grid item direction="row">
                         <Typography color="secondary" variant="h5" component="h1" gutterBottom>
                             Skills
